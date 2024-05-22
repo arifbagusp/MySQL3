@@ -1,5 +1,4 @@
-# praktikum_3
-# Tugas Praktikum { Pertemuan ke 10 } <img src=https://qph.fs.quoracdn.net/main-qimg-648763cc041459725b62108f4fdf5b91 width="110px" >
+# Tugas Praktikum { Pertemuan ke 9 } <img src=https://logos-download.com/wp-content/uploads/2016/05/MySQL_logo_logotype.png width="130px" >
 
 ## Profil
 | Variable | Isi |
@@ -15,25 +14,32 @@
 dengan menggunakan kode berikut :
 ```
 INSERT INTO dosen (kd_ds, nama) VALUES
-('DS001', 'Fajar'),
-('DS002', 'Arif'),
-('DS003', 'Bagus'),
-('DS004', 'Wahyu'),
-('DS005', 'Ridho');
+('DS001', 'Arif'),
+('DS002', 'Bagus'),
+('DS003', 'Iqbal'),
+('DS004', 'Ridho'),
+('DS005', 'Faiz');
 ```
-![alt text](Picture/6.PNG)
+![alt text](SS\Screenshot_1.png)
 
 ***Output :***
 
-![alt text](Picture/6.1.PNG)
+![alt text](SS\Screenshot_2.png)
 
 2. Hapus satu record data pada tabel dosen yang telah dirujuk pada tabel mahasiswa. 
 ```
 DELETE FROM dosen WHERE kd_ds = 'DS005';
 ```
-***Output :***
+***input***
 
-![alt text](Picture/7.PNG)
+![alt text](SS\Screenshot_3.png)
+
+```
+```
+***Output***
+
+![alt text](SS\Screenshot_4.png)
+
 
 3. Ubah mode menjadi **ON UPDATE CASCADE ON DELETE RESTRICT** 
 
@@ -50,32 +56,32 @@ ON DELETE RESTRICT;
 ```
 ***Output :***
 
-![alt text](Picture/8.PNG)
+![alt text](SS\Screenshot_5.png)
 
 4. Lakukan perubahan data pada tabel dosen (kd_ds)
 
 Berikut adalah contoh perintah untuk melakukan perubahan data pada tabel "dosen" dengan kolom "kd_ds":
 ```
-UPDATE dosen SET kd_ds = 'DS005' WHERE nama = 'Wahyu';
+UPDATE dosen SET kd_ds = 'DS006' WHERE nama = 'Faiz';
 ```
-Perintah di atas akan mengubah nilai kolom `"kd_ds" "Wahyu" menjadi "DS005" pada tabel "dosen"`. Anda dapat menyesuaikan nilai yang ingin Anda ubah dan kondisi WHERE sesuai dengan kebutuhan Anda.
+Perintah di atas akan mengubah nilai kolom `"kd_ds" "Faiz" menjadi "DS006" pada tabel "dosen"`. Anda dapat menyesuaikan nilai yang ingin Anda ubah dan kondisi WHERE sesuai dengan kebutuhan Anda.
 
 Pastikan untuk menjalankan perintah dengan hati-hati dan memastikan bahwa perubahan data yang Anda lakukan sesuai dengan kebutuhan dan kebijakan yang berlaku dalam basis data Anda.
 
 ***Output :***
 
-![alt text](Picture/9.PNG)
+![alt text](SS\Screenshot_6.png)
 
 5. Lakukan penghapusan data pada tabel dosen
 
-Untuk menghapus data dari tabel "dosen" dengan kondisi "kd_ds = 'DS005'", Anda dapat menggunakan perintah DELETE dengan sintaks yang benar. Berikut adalah contoh perintah yang dapat Anda gunakan:
+Untuk menghapus data dari tabel "dosen" dengan kondisi "kd_ds = 'DS006'", Anda dapat menggunakan perintah DELETE dengan sintaks yang benar. Berikut adalah contoh perintah yang dapat Anda gunakan:
 ```
-DELETE FROM Dosen WHERE kd_ds = 'DS005';
+DELETE FROM Dosen WHERE kd_ds = 'DS006';
 ```
 
 ***Output :***
 
-![alt text](Picture/10.PNG)
+![alt text](SS\Screenshot_7.png)
 
 6. Ubah mode menjadi **ON UPDATE CASCADE ON DELETE SET NULL**
 ```
@@ -91,7 +97,7 @@ ON DELETE SET NULL;
 ```
 ***Output :***
 
-![alt text](Picture/11.PNG)
+![alt text](SS\Screenshot_8.png)
 
 Dengan perubahan di atas, ketika Anda menghapus record dari tabel "dosen" yang memiliki referensi di tabel "mahasiswa", nilai kolom "kd_ds" dalam tabel "mahasiswa" yang mengacu pada record yang dihapus akan diatur menjadi NULL.
 
@@ -103,9 +109,7 @@ DELETE FROM dosen WHERE kd_ds = 'DS003';
 ```
 ***0utput :***
 
-![alt text](Picture/12.PNG)
-
-![alt text](Picture/12.1.PNG)
+![alt text](SS\Screenshot_9.png)
 
 Perintah ini akan menghapus record dengan nilai "DS003" dari tabel "dosen", dan karena menggunakan opsi ON DELETE SET NULL, nilai kolom "kd_ds" dalam tabel "mahasiswa" yang mengacu pada record yang dihapus akan diatur menjadi NULL.
 
@@ -195,67 +199,12 @@ Dalam banyak kasus, pemilihan antara `RESTRICT dan CASCADE `tergantung pada kebu
 
 - **CASCADE** melakukan tindakan yang sama pada data yang terkait. Jika Anda menghapus atau memperbarui data, CASCADE akan mempengaruhi semua data terkait, termasuk data anak yang terhubung secara rekursif.  
 
-
-# Tugas pada Praktikum 2:
-• Buat DDL Script berdasarkan skema ERD tersebut diatas.
-• Jalankan script DDL tersebut pada DBMS MySQL.
-
-```
-Mahasiswa (nim, nama, jenis_kelamin, tgl_lahir, jalan, kota, kodepos, no_hp, kd_ds)
-
-Dosen (kd_ds, nama)
-
-Matakuliah (kd_mk, nama, sks)
-
-JadwalMengajar (kd_ds, kd_mk, hari, jam, ruang)
-
-KRSMahasiswa (nim, kd_mk, kd_ds, semester, nilai)
-```
-
-**Langkah-langkahnya :**
-
-1. Buat dulu script untuk table Mahasiswa :
-![alt text](Picture/1.PNG)
-
-2. Buat Index Key
-![alt text](Picture/index.PNG)
-
-3. Buat Foreign Key
-![alt text](Picture/foreign.PNG)
-
-4. Buat Tabel Dosen
-![alt text](Picture/2.PNG)
-
-**output**
-
-![alt text](Picture/2.1.PNG)
-
-5. Buat Tabel Mata Kuliah
-![alt text](Picture/3.PNG)
-
-**output**
-
-![alt text](Picture/3.1.PNG)
-
-6. Buat Tabel Jadwal Mengajar
-![alt text](Picture/4.PNG)
-
-**output**
-
-![alt text](Picture/4.1.PNG)
-
-7. Buat Tabel KRSMahasiswa
-![alt text](Picture/5.PNG)
-
-**output**
-
-![alt text](Picture/5.1.PNG)
-
 ### Buat laporan praktikum yang berisi, langkah-langkah praktikum beserta screenshot yang sudah dilakukan dalam bentuk dokumen.
+
 
 <img src=https://pngimg.com/uploads/google_drive/google_drive_PNG9.png width="110px" >
 
 - [Link Laporan Praktikum](https://bit.ly/3onAF8v)
 
-## FINISH# MySQL#
-# MySQL3
+
+## FINISH
