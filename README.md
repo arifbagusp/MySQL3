@@ -1,4 +1,4 @@
-# Tugas Praktikum { Pertemuan ke 9 } <img src=https://logos-download.com/wp-content/uploads/2016/05/MySQL_logo_logotype.png width="130px" >
+# Tugas Praktikum { Pertemuan ke 10 } <img src=https://logos-download.com/wp-content/uploads/2016/05/MySQL_logo_logotype.png width="130px" >
 
 ## Profil
 | Variable | Isi |
@@ -20,11 +20,11 @@ INSERT INTO dosen (kd_ds, nama) VALUES
 ('DS004', 'Ridho'),
 ('DS005', 'Faiz');
 ```
-![alt text](SS\Screenshot_1.png)
+![alt text](SS/Screenshot_1.png)
 
 ***Output :***
 
-![alt text](SS\Screenshot_2.png)
+![alt text](SS/Screenshot_2.png)
 
 2. Hapus satu record data pada tabel dosen yang telah dirujuk pada tabel mahasiswa. 
 ```
@@ -32,13 +32,13 @@ DELETE FROM dosen WHERE kd_ds = 'DS005';
 ```
 ***input***
 
-![alt text](SS\Screenshot_3.png)
+![alt text](SS/Screenshot_3.png)
 
 ```
 ```
 ***Output***
 
-![alt text](SS\Screenshot_4.png)
+![alt text](SS/Screenshot_4.png)
 
 
 3. Ubah mode menjadi **ON UPDATE CASCADE ON DELETE RESTRICT** 
@@ -56,7 +56,7 @@ ON DELETE RESTRICT;
 ```
 ***Output :***
 
-![alt text](SS\Screenshot_5.png)
+![alt text](SS/Screenshot_5.png)
 
 4. Lakukan perubahan data pada tabel dosen (kd_ds)
 
@@ -70,7 +70,7 @@ Pastikan untuk menjalankan perintah dengan hati-hati dan memastikan bahwa peruba
 
 ***Output :***
 
-![alt text](SS\Screenshot_6.png)
+![alt text](SS/Screenshot_6.png)
 
 5. Lakukan penghapusan data pada tabel dosen
 
@@ -81,7 +81,7 @@ DELETE FROM Dosen WHERE kd_ds = 'DS006';
 
 ***Output :***
 
-![alt text](SS\Screenshot_7.png)
+![alt text](SS/Screenshot_7.png)
 
 6. Ubah mode menjadi **ON UPDATE CASCADE ON DELETE SET NULL**
 ```
@@ -97,7 +97,7 @@ ON DELETE SET NULL;
 ```
 ***Output :***
 
-![alt text](SS\Screenshot_8.png)
+![alt text](SS/Screenshot_8.png)
 
 Dengan perubahan di atas, ketika Anda menghapus record dari tabel "dosen" yang memiliki referensi di tabel "mahasiswa", nilai kolom "kd_ds" dalam tabel "mahasiswa" yang mengacu pada record yang dihapus akan diatur menjadi NULL.
 
@@ -109,7 +109,7 @@ DELETE FROM dosen WHERE kd_ds = 'DS003';
 ```
 ***0utput :***
 
-![alt text](SS\Screenshot_9.png)
+![alt text](SS/Screenshot_9.png)
 
 Perintah ini akan menghapus record dengan nilai "DS003" dari tabel "dosen", dan karena menggunakan opsi ON DELETE SET NULL, nilai kolom "kd_ds" dalam tabel "mahasiswa" yang mengacu pada record yang dihapus akan diatur menjadi NULL.
 
